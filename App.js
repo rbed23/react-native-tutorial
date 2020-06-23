@@ -1,11 +1,13 @@
 import React from 'react';
 import { AppLoading } from 'expo';
- import {
+import {
   useFonts,
   Nunito_400Regular as nunitoRegular,
   Nunito_700Bold as nunitoBold
 } from '@expo-google-fonts/nunito';
-import Navigator from './routing/homeStack';
+
+import Navigator from './routing/drawer';
+
 
 export default function App() {
 

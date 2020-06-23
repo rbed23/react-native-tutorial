@@ -1,20 +1,35 @@
 import React from 'react';
-import { StyleSheet, View, Text } from "react-native";
-import globalStyles from '../styles/globals';
+import { StyleSheet, View, Text, Image } from 'react-native';
+import { globalStyles, globalImages } from '../styles/globals';
+import Card from '../shared/card'; 
 
-export default function Details() {
+export default function Details(props) {
+
+    const rating = props.navigation.getParam('rating')
+
     return (
         <View style = {globalStyles.container}>
-            <Text style= {globalStyles.titleText}>Details</Text>
-            <Text style= {globalStyles.bodyText}>Details</Text>
-            <Text style= {styles.boldText}>Details</Text>
+            <Card>
+                <Text>{ props.navigation.getParam('title') }</Text>
+                <Text>{ props.navigation.getParam('body') }</Text>
+                <View style={styles.rating}>
+                    <Text>Game Zone Rating:
+                        <Image source={globalImages.ratings[rating]}/>
+                    </Text>
+                </View>
+            </Card>
         </View>
     );
 }
 
-const styles = StyleSheet.create({
-    boldText: {
-        fontFamily: 'nunitoBold',
-        fontSize: 30
+
+const styles=StyleSheet.create({
+    rating: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingTop: 16,
+        margin: 16,
+        borderTopWidth: 1,
+        borderTopColor: 'lightgray',
     }
 })
