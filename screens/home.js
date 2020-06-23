@@ -22,7 +22,6 @@ export default function Home( props ) {
                     <TouchableOpacity onPress={() => props.navigation.navigate('details', item)}>
                         <Card>
                             <Text style={globalStyles.bodyText}>{ item.title}</Text>
-                            {/* <Text style={globalStyles.bodyText}>{ item.rating}</Text> */}
                         </Card>
                     </TouchableOpacity>
                 )}
@@ -30,10 +29,3 @@ export default function Home( props ) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    boldText: {
-        fontFamily: 'nunitoBold',
-        fontSize: 30
-    }
-})

@@ -9,10 +9,11 @@ export const globalStyles = StyleSheet.create({
   bodyText: {
     marginVertical: 8,
     lineHeight: 20,
+    fontWeight: 'bold',
   },
   container: {
     flex: 1,
-    padding: 20,
+    padding: 30,
   },
 });
 
