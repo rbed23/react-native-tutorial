@@ -9,7 +9,6 @@ export default function Header(props) {
     }
 
     return (
-
         <ImageBackground source={require('../assets/game_bg.png')} style={styles.header}>
             <MaterialIcons
                 name='menu'
@@ -28,10 +27,11 @@ export default function Header(props) {
 const styles = StyleSheet.create({
     header: {
         width: '100%',
-        height: '200%',
+        height: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'green',
     },
     headerText: {
         fontWeight: 'bold',
