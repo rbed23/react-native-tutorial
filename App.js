@@ -1,19 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+ import {
+  useFonts,
+  Nunito_400Regular as nunitoRegular,
+  Nunito_700Bold as nunitoBold
+} from '@expo-google-fonts/nunito';
+import Navigator from './routing/homeStack';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  let [fontsLoaded] = useFonts({
+    nunitoRegular,
+    nunitoBold
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <Navigator />
+    );
+  }
+}
