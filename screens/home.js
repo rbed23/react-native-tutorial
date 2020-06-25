@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, FlatList, TouchableOpacity, Modal } from 'react
 import { globalStyles } from '../styles/globals';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from './reviewForm';
 
 export default function Home( props ) {
 
@@ -16,7 +17,13 @@ export default function Home( props ) {
 
     const [modal, setModal] = useState(false);
 
-
+    const addReview = (review) => {
+        review.key = Math.random().toString();
+        setReviews((currentReviews) => {
+            return [review, ...currentReviews]
+        });
+        setModal(false);
+    };
 
 
     return (
@@ -32,7 +39,7 @@ export default function Home( props ) {
                         }
                         onPress={() => setModal(false)}
                     />
-                    <Text>Hello</Text>
+                    <ReviewForm addReview={addReview}/>
                 </View>
             </Modal>
 
